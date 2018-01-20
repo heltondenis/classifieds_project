@@ -15,16 +15,30 @@ require 'pages/header.php';
 				$senha = addslashes($_POST['senha']);
 				$telefone = addslashes($_POST['telefone']);
 
-			if (!empty($nome) && !empty($email) && !empty($senha)) {
-				$u->cadastrar($nome, $email, $senha, $telefone);
-			} else {
-				?>
-				<div class="alert alert-danger">
-					Preencha todos os campos!
-				</div>
-				<?php
-			}
-		}
+			if(!empty($nome) && !empty($email) && !empty($senha)) {
+					if($u->cadastrar($nome, $email, $senha, $telefone)) {
+						?>
+							<div class="alert alert-success">
+								Seu cadastro foi efetuado, faça agora seu <strong><a href="login.php">login!</a></strong>
+							</div>
+						<?php
+					} else {
+						?>
+							<div class="alert alert-warning">
+								Usuário já existe! <strong><a href="login.php">Faça seu login!</a></strong>
+							</div>
+						<?php
+						 	}
+					} else {
+						?>
+							<div class="alert alert-danger">
+								Preencha todos os campos!
+							</div>
+						<?php
+					}
+				}
+
+
 		?>
 		<form method="POST">
 			<div class="form-group">
