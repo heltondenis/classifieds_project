@@ -1,4 +1,7 @@
-<?php require 'pages/header.php'; ?>
+<?php 
+require 'config.php';
+require 'pages/header.php'; 
+?>
 
 	<!-- JUMBOTRON -->
 	<div class="container-fluid">
