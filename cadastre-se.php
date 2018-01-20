@@ -6,6 +6,26 @@ require 'pages/header.php';
 	<!-- JUMBOTRON -->
 	<div class="container">
 		<h1>Cadastra-se</h1>
+		<?php 
+			require 'classes/usuarios_class.php';
+			$u = new Usuarios();
+			if (isset($_POST['nome']) && !empty($_POST['nome'])) {
+				$nome = addslashes($_POST['nome']);
+				$email = addslashes($_POST['email']);
+				$senha = addslashes($_POST['senha']);
+				$telefone = addslashes($_POST['telefone']);
+
+			if (!empty($nome) && !empty($email) && !empty($senha)) {
+				$u->cadastrar($nome, $email, $senha, $telefone);
+			} else {
+				?>
+				<div class="alert alert-danger">
+					Preencha todos os campos!
+				</div>
+				<?php
+			}
+		}
+		?>
 		<form method="POST">
 			<div class="form-group">
 				<label for="nome">
