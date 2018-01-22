@@ -22,7 +22,7 @@
 				</a>
 			</div>
 			<ul class="nav navbar-nav navbar-right">
-				<?php if (isset($_SESSION['cLogin']) && !empty($_SESSION['cLogin'])):?>
+				<?php if(isset($_SESSION['cLogin']) && !empty($_SESSION['cLogin'])):?>
 					<li><a href="meus-anuncios.php">Meus Anúncios</a></li>
 					<li><a href="sair.php">Sair</a></li>
 				<?php else: ?>

@@ -27,7 +27,7 @@
 		public function login($email, $senha){
 			global $pdo;
 
-			$sql = $pdo->prepare("SELECT id FROM usuarios WHERE email = :email, senha = :senha");
+			$sql = $pdo->prepare("SELECT id FROM usuarios WHERE email = :email AND senha = :senha");
 			$sql->bindValue(":email", $email);
 			$sql->bindValue(":senha", md5($senha));
 			$sql->execute();
