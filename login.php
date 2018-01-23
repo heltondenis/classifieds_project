@@ -15,7 +15,7 @@ require 'pages/header.php';
 
 				if ($u->login($email, $senha)) {
 					?>
-					<script type="text/javascript">window.location.href="./";</script>
+					<script type="text/javascript">window.location.href="./meus-anuncios.php";</script>
 					<?php
 				} else {
 					?>
