@@ -1,5 +1,4 @@
-<?php 
-require 'pages/header.php'; ?>
+<?php require 'pages/header.php'; ?>
 <?php
 if(empty($_SESSION['cLogin'])) {
 	?>
@@ -32,9 +31,9 @@ if(empty($_SESSION['cLogin'])) {
 		<tr>
 			<td>
 				<?php if(!empty($anuncio['url'])): ?>
-				<img src="assets/img/anuncios/<?php echo $anuncio['url']; ?>" height="50" border="0" />
+				<img src="assets/images/anuncios/<?php echo $anuncio['url']; ?>" height="50" border="0" />
 				<?php else: ?>
-				<img src="assets/img/default.jpg" height="50" border="0" />
+				<img src="assets/images/default.jpg" height="50" border="0" />
 				<?php endif; ?>
 			</td>
 			<td><?php echo $anuncio['titulo']; ?></td>
